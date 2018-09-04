@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		/*const a=12;
+
+		a=55;
+
+		alert(a);*/
+
+		/*if(3<5){
+			let a=12;
+		}
+
+		alert(a);*/
+
+		window.onload = function(){
+			let aBtn = document.getElementsByTagName('input');
+
+			/*for(let i=0;i<aBtn.length;i++){
+				aBtn[i].onclick=function(){
+					alert(i);
+				};
+			}*/
+
+			for(var i=0;i<aBtn.length;i++){
+
+
+				(function(){
+					aBtn[i].onclick=function(){
+						alert(i);
+					};
+				})();				
+			}
+		};
+
+	</script>
+</head>
+<body>
+	<input type="button" value="1">
+	<input type="button" value="2">
+	<input type="button" value="3">
+</body>
+</html>
