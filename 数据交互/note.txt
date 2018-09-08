@@ -1,0 +1,8 @@
+to do:
+1.jQuery-Validate
+
+
+
+表单提交——稳定、浏览器的实现
+ajax提交——js的实现
+
