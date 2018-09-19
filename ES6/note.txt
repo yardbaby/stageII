@@ -72,7 +72,78 @@ ES6新语法：
 	}else{
 		alert('图片文件');
 	}
+
+6.promise
+
+	promise：解决异步操作
+
+	同步——串行  简单、方便
+	异步——并发	性能高、体验好	
+
+	异步：
+	$.ajax({
+		url:'/banner_data',
+		success(banners){
+			$.ajax({
+				url: '/user_data',
+				success(user){
+					$.ajax({
+						url:'/news_data',
+						success(news){
+
+						},
+						error(){
+							alert("数据获取失败");
+						}
+					})
+				},
+				error(){
+					alert("数据获取失败");	
+				}
+			})
+		},
+		error(){
+			alert("数据获取失败");
+		}
+	});
+
+	Promise(用同步的方式去写异步):
+		Promise.all([
+			$.ajax('/banner_data'),
+			$.ajax('/item_data'),
+			$.ajax('/user_data'),
+			$.ajax('/news_data')
+		]).then(arr=>{
+			let [banners,items,user,news]=arr;
+		},()=>{});
+
+
+		let p=new Promise((resolve,reject)=>{
+			resolve();
+
+			reject();
+		});
+		p.then(()=>{},()=>{});
+
+		注意点：
+			(1)Promise有用——解除异步操作
+			(2)Promise有局限——带逻辑的异步操作麻烦
+
 		
+		Promise.all();     与：所有的都成功
+		Promise.race();    或：只要有一个完成 
+
+
+	同步：
+		let banners=$.ajax({url:'/banner_data'});
+		let items=$.ajax({url:'item_data'});
+		let user=$.ajax({url:'user_data'});
+		let news=$.ajax({url:'news_data'});
+
+
+
+
+
 
 	
 

@@ -45,6 +45,7 @@
             }
 
             showName(){
+                alert(this);
                 alert('我叫'+this.name);
             }
             showAge(){
@@ -53,6 +54,7 @@
         }
 
         let p=new Person('blue',18);
+        // document.onclick=p.showName();
         document.onclick=p.showName.bind(p);
 
         // p.showName();
