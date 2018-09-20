@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<script src="jquery.js"></script>
+<script type="text/javascript">
+    // function sleep(sec){
+    //     return new Promise((resolve,reject)=>{
+    //         setTimeout(function(){
+    //             resolve();
+    //         },sec*1000)
+    //     })
+    // }
+
+    // async function show(){
+    //     alert('a');
+
+    //     await sleep(1);
+
+    //     alert('b');
+
+    //     await sleep(2);
+
+    //     alert('c');
+    // }
+
+    // show();
+
+    // (async ()=>{
+    //     let data1=await $.ajax({url: '1.txt', dataType: 'json'});
+
+    //     if(data1.a+data1.b<10){
+    //         let data2=await $.ajax({url: '2.txt',dataType: 'json'});
+
+    //         alert(data2[0]);
+    //     }else{
+    //         let data3=await $.ajax({url: '3.txt', dataType: 'json'});
+
+    //         alert(data3.name);
+    //     }
+    // })();
+
+    async function show(){
+        try{
+            let data1=await $.ajax({url: '1.txt', dataType: 'json'});
+            let data2=await $.ajax({url: '2.txt',dataType: 'json'});
+            let data3=await $.ajax({url: '3.txt', dataType: 'json'}); 
+            
+            console.log(data1,data2,data3);
+        
+        }catch(e){
+            alert('有问题');
+
+            throw new Error('我错了...');
+        }
+    }
+
+    show();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
