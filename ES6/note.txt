@@ -34,3 +34,130 @@ ES6新语法：
 		b.如果函数体只有一句话, 而且是return, {}可以省
 		*关于this
 
+
+3.函数
+	箭头函数
+		function (参数,参数){
+			函数体
+		}
+
+		(参数,参数)=>{
+			函数体
+		}
+
+		1.如果有且仅有1个参数, ()可以省
+		2.如果函数体只有一句话, 而且是return, {}可以省
+		*关于this
+	
+	默认参数
+		(a=xx, b=xx, c=xx)
+	
+	参数展开(剩余参数、数组展开)
+	1."三个点"的第1个用途：接收剩余参数
+		function show(a,b,...名字){}
+		剩余参数必须在参数列表的最后
+	
+	2."三个点"的第2个用途：展开一个数组
+
+4.数组/json
+	数组——5种
+
+		(1)map     映射：一个对一个
+		(2)reduce  汇总: 一堆=>一个
+		(3)filter  过滤
+		(4)forEach 遍历
+		(5)Array.from([array-like])=>[x,x,xx]
+	
+	json——2变化
+		(1)简写
+		(2)function可以不写
+
+5.字符串
+	字符串模板：植入变量、任意折行
+
+	if(sNum.startsWith('135')){
+		alert('移动');
+	}else{
+		alert('联通');
+	}
+
+	if(fileName.endsWith('.txt')){
+		alert('文本文件');
+	}else{
+		alert('图片文件');
+	}
+
+6.promise
+
+	promise：解决异步操作
+
+	同步——串行  简单、方便
+	异步——并发	性能高、体验好	
+
+	异步：
+	$.ajax({
+		url:'/banner_data',
+		success(banners){
+			$.ajax({
+				url: '/user_data',
+				success(user){
+					$.ajax({
+						url:'/news_data',
+						success(news){
+
+						},
+						error(){
+							alert("数据获取失败");
+						}
+					})
+				},
+				error(){
+					alert("数据获取失败");	
+				}
+			})
+		},
+		error(){
+			alert("数据获取失败");
+		}
+	});
+
+	Promise(用同步的方式去写异步):
+		Promise.all([
+			$.ajax('/banner_data'),
+			$.ajax('/item_data'),
+			$.ajax('/user_data'),
+			$.ajax('/news_data')
+		]).then(arr=>{
+			let [banners,items,user,news]=arr;
+		},()=>{});
+
+
+		let p=new Promise((resolve,reject)=>{
+			resolve();
+
+			reject();
+		});
+		p.then(()=>{},()=>{});
+
+		注意点：
+			(1)Promise有用——解除异步操作
+			(2)Promise有局限——带逻辑的异步操作麻烦
+
+		
+		Promise.all();     与：所有的都成功
+		Promise.race();    或：只要有一个完成 
+
+
+	同步：
+		let banners=$.ajax({url:'/banner_data'});
+		let items=$.ajax({url:'item_data'});
+		let user=$.ajax({url:'user_data'});
+		let news=$.ajax({url:'news_data'});
+
+
+
+
+
+
+	
+

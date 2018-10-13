@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<script src="jquery.js"></script>
+<script type="text/javascript">
+    // function *show(){
+    //     alert('aaa');
+
+    //     yield;
+
+    //     alert('bbb');
+    // }
+
+    // let gen=show();
+
+    // gen.next();
+
+    // setTimeout(function(){
+    //     gen.next();
+    // },5000);
+
+    function *show(){
+        alert('aaa');
+
+        let a=yield;
+
+        alert('bbb'+a);
+    }
+
+    let gen=show();
+
+    gen.next();
+
+    gen.next(12);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

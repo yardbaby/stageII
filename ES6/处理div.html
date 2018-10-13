@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+	<script type="text/javascript">
+		
+        window.onload=function(){
+            let aDiv=document.getElementsByTagName('div');
+
+            Array.from(aDiv).forEach(div=>{
+                div.style.background='yellow';
+            });
+        };
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
