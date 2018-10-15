@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+    <script>
+        window.onload = function(){
+            let vm = new Vue({
+                el: '#div1',
+                data: {
+                    // txt: 'zxm'
+                    styleJson: {
+                        color: '',
+                        display: 'block',
+                        width: '300px',
+                        'font-size':'40px'
+                    }
+                }
+            });
+        };
+    </script>
+  </head>
+  <body>
+    <div id="div1">
+        <!-- 姓名：{{name}} -->
+
+        <!-- <input type="text" v-model="txt">
+        <input type="text" v-model="txt">
+        <span>{{txt}}</span> -->
+
+        <!-- <span v-bind:title="txt">span标签</span><br>
+        <span :title="txt">span标签</span>     -->
+
+        <input type="text" v-model="styleJson.color">
+        <span :style="styleJson">span标签</span>
+    </div>
+  </body>
+</html>

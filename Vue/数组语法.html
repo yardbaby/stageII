@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+    <script>
+        window.onload = function(){
+         let vm = new Vue({
+             el:'#div1',
+             data:{
+                 arr:['aaa','bbb','ccc']
+             }
+         })
+        };
+    </script>
+  </head>
+  <body>
+    <div id="div1">
+        <span :class="arr">span标签</span>
+    </div>
+  </body>
+</html>
